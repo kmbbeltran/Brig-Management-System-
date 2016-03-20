@@ -1,7 +1,7 @@
 Kelly Maclauchlan
 Katherine Beltran
 
-This program is a modification of a4 as was posted on the culearn page:
+This program is a modification of a4:
 This is a program that manages pirates in cells on the brig.
 The user can add and remove pirates to the cells and check to see a
 manifest of pirates in the brig divided by cells.
