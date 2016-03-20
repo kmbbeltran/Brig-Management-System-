@@ -6,24 +6,25 @@
 
 #include <iostream>
 #include <string>
-#include <list>
 
 using namespace std;
 
 #include "defs.h"
 #include "Pirate.h"
-#include "Cell.h"
+#include "CArray.h"
 
 class Brig 
 {
   public:
     Brig();
-    ~Brig();
-    list<Cell*> getCells();    
-    Brig& operator+=(Pirate*);  
+    int addPirate(Pirate*);
+    CArray& getCells();
+    
+    // overloader function
+    Brig& operator+=(Pirate*);
     
   private:
-    list<Cell*> cells;
+    CArray cells;
 };
 
 #endif

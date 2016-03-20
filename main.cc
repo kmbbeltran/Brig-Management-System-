@@ -1,4 +1,4 @@
-// Purpose:   Main function 
+//Purpose:   Main function 
 
 
 #include <iostream>

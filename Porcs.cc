@@ -7,11 +7,6 @@
 Porcs::Porcs()
 {
   // space between 2 and 4 units
-  space = random(3) + 2;
-}
+  space = random(2) + 2;
 
-// assigns the Porc pirate a cannon as its weapon 
-string Porcs::getWeapon()
-{
-  return "cannon";
 }

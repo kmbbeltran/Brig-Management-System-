@@ -9,9 +9,3 @@ Dorcs::Dorcs()
   // space between 4 and 6 units
   space = random(3) + 4;
 }
-
-// assigns the Dorc pirate a sword as its weapon 
-string Dorcs::getWeapon()
-{
-  return "swords"; 
-}

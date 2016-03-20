@@ -1,4 +1,4 @@
-// Purpose:   Class definition for entity class Borcs; a derived class of Pirate
+//Purpose:   Class definition for entity class Borcs; a derived class of Pirate
 
  
 #ifndef BORCS_H
@@ -16,6 +16,5 @@ class Borcs : public Pirate
 {
   public:
     Borcs();
-    virtual string getWeapon(); 
 };
 #endif

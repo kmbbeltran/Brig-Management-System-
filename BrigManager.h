@@ -1,4 +1,4 @@
-// Purpose:   Class definition for control class BrigManager
+//Purpose:   Class definition for control class BrigManager
 
 
 #ifndef BRIG_MANAGER_H
@@ -18,7 +18,6 @@ class BrigManager
     void launch();
     void addPirates(int);
     int removePirate(int);
-    void fight(int, int);
   private:
     UImanager *view;
     Brig      *brig;

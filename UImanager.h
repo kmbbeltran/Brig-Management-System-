@@ -1,13 +1,13 @@
 //Purpose:   Class definition for UI class UImanager
 
 
+
 #ifndef UIMANAGER_H
 #define UIMANAGER_H
 
 #include <string>
 using namespace std;
 #include "Brig.h"
-#include "PArray.h" 
 
 #define TEST_MODE
 
@@ -21,8 +21,6 @@ class UImanager {
     void showError(string);
     void pause();
     void getPirateId(int*);
-    void fight(int*, int*);
-    void printWinner(Pirate&, Pirate&); 
 };
 
 #endif

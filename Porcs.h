@@ -16,6 +16,6 @@ class Porcs : public Pirate
 {
   public:
     Porcs();
-    virtual string getWeapon(); 
+
 };
 #endif

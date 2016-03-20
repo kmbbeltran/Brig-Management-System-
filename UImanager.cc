@@ -1,6 +1,4 @@
 //Purpose:   Function implementations for UI class UImanager
-//           Has all of the user interface implementation to display text to the user 
-//           and receive user input
 
 
 #include <iostream>
@@ -64,10 +62,9 @@ void UImanager::pirateMenu(int* choice)
     cout<< "\n\n\n                   PIRATE MANAGEMENT MENU \n\n";
     cout << "( 1 )  Add pirate" << endl;
     cout << "( 2 )  Remove pirate" << endl;
-    cout << "( 3 )  Make the Pirates fight" << endl;
     cout << "( 0 )  Exit" << endl;
     
-    while (*choice < 0 || *choice > 4) {
+    while (*choice < 0 || *choice > 2) {
         cout << "Enter your selection:  ";
         getline(cin, str);
         stringstream ss(str);
@@ -105,51 +102,20 @@ void UImanager::getNumPirates(int* numPirates)
 //prints out all of the cells and pirates in the brig
 void UImanager::printBrig(Brig* brig)
 {
-    int i = 0; 
-    list<Cell*> ca =  brig->getCells();    
-    list<Cell*>::iterator itr;
-    for(itr = ca.begin(); 
-        itr != ca.end(); 
-        itr++){
-        Cell* temp=*itr;
-       
-      cout<<endl<<"--Cell "<<i<<": space remaining= "<<temp->getSpace()<<endl;
-      PArray<Pirate*>& pa = temp->getPirates(); 
-      
-      for(int j = 0; j < pa.getSize(); j++){
-        if(pa[j] == 0){continue;}
-        
-        cout << "-----Pirate id: " <<pa[j]->getId() 
-             << "  space: " << pa[j]->getSpace() << endl; 
-      }
-      i++;
+    CArray& cells = brig->getCells();
+    
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+    cout<<"Brig: #cells=" << cells.getSize() <<endl;
+    
+    for (int i=0; i<cells.getSize(); ++i) {
+        cout <<endl << "--Cell "<<i<<": space remaining= "<<cells[i]->getSpace()<<endl;
+        PArray& pa = cells[i]->getPirates();
+        for (int j=0; j<pa.getSize(); ++j) {
+            if (pa[j] == 0)
+                continue;
+            cout <<"----Pirate id: "<< pa[j]->getId()
+            << "  space: " << pa[j]->getSpace() << endl;
+        }
     }
-}
-
-// chooses two pirates to fight 
-void UImanager::fight(int* pir1, int* pir2)
-{ 
-  string str;
-  cout << "Enter the pirate ID separately..." << endl; 
-  cout << endl;
-  
-  cout << "First pirate IDs:  ";
-  getline(cin, str);
-  stringstream ss1(str);
-  ss1 >> *pir1; 
-  
-  cout << "Second pirate IDs:  ";
-  getline(cin, str);
-  stringstream ss2(str);
-  ss2 >> *pir2;
-}
-
-//printing out who won the fight
-void UImanager::printWinner(Pirate& winner, Pirate& loser)
-{
-  cout << endl << "And the winner of the fight is.... " << endl; 
-  cout << endl << "Pirate " << winner.getId() << " with the " 
-       << winner.getWeapon() << " against Pirate " << loser.getId()
-       << " with the " << loser.getWeapon() << endl; 
 }
 

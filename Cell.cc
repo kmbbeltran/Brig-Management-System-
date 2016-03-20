@@ -11,7 +11,7 @@ Cell::Cell(int size)
   cellNumber = nextId++;
 }
 
-PArray<Pirate*>& Cell::getPirates() { return pirates; }
+PArray& Cell::getPirates() { return pirates; }
 int     Cell::getSpace()   { return spaceRemaining; }
 
 //checks to see if the pirate can fit in the cell
@@ -22,21 +22,22 @@ bool Cell::fits(Pirate* pirate)
 }
 
 // reduces the space available
-void Cell::reduceSpace(int pSpace)   {spaceRemaining -= pSpace;}
+void Cell::reduceSpace(int pSpace)   { spaceRemaining -= pSpace; }
 // increases the space available
-void Cell::increaseSpace(int pSpace) {spaceRemaining += pSpace;}
+void Cell::increaseSpace(int pSpace) { spaceRemaining += pSpace; }
 
 // increases the space available
 int Cell::operator+=(int space)
 { 
-  if(space > 0){increaseSpace(space);}
+  increaseSpace(space);
+    
   return spaceRemaining;
 }
 
 // reduces the space available
 int Cell::operator-=(int space)
 { 
-  if(space > 0){reduceSpace(space);}
+  reduceSpace(space);
   return spaceRemaining; 
 }
 

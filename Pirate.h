@@ -1,5 +1,6 @@
 //Purpose:   Class definition for entity class Pirate
 
+
 #ifndef PIRATE_H
 #define PIRATE_H
 
@@ -16,15 +17,13 @@ class Pirate
     Pirate();
     int getId();
     int getSpace();
-    virtual string getWeapon() = 0;
-   
+    
   private:
     static int  nextId;
     int         id;
   
   protected:
     int space; 
-    string weapon; 
 };
 
 #endif

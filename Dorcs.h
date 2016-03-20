@@ -16,6 +16,5 @@ class Dorcs : public Pirate
 {
   public:
     Dorcs();
-    virtual string getWeapon(); 
 };
 #endif
